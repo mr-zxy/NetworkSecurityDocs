@@ -19,6 +19,7 @@
 * #### docker images 查看docker 镜像
 1. 方法一：删除时不要使用 image ID，改用镜像名称（REPOSITORY）
 2. 方法二：docker rmi -f imageID
+3. 删除全部 docker rmi -f $(docker images -aq)
 ##  docker 系统指令
 * 2.1 启动docker服务
 * systemctl start docker
@@ -106,16 +107,54 @@ docker run -it -v 主机目录:容器内目录
  * docker run -it -name docker01 xuyang/centos:1.0 
  * docker run -it --name docker02 --volumes-from docker01 xuyang/centos:1.0 
  ---
- docker01更改同时也更改了docker02
+ docker01更改同时也更改了docker02,如果docker01断了docker02数据不会丢失。
+
+# dockerfile 用来构建docker镜像文件！命令参数脚本
+1. 便携dockerfile 文件
+2. docker build 构建成为一个镜像
+3. docker run 运行镜像
+4. docker push 发布镜像 （DockerHub，阿里云镜像）
+# dockerfile 构建过程
+1. 每一个保留字关键字都是大写
+2. 执行从上倒下以次执行
+3. #表示注释
+4. 每一个指定都会提交创建一个新的镜像层，并提交！
+!["log"](./images/025095f80a29a477651db5e3a33060d5.webp)
+# dockerfile 命令
+``` dockerfile
+FROM scratch
+ADD centos-7-x86_64-docker.tar.xz /
+
+LABEL \
+    org.label-schema.schema-version="1.0" \
+    org.label-schema.name="CentOS Base Image" \
+    org.label-schema.vendor="CentOS" \
+    org.label-schema.license="GPLv2" \
+    org.label-schema.build-date="20201113" \
+    org.opencontainers.image.title="CentOS Base Image" \
+    org.opencontainers.image.vendor="CentOS" \
+    org.opencontainers.image.licenses="GPL-2.0-only" \
+    org.opencontainers.image.created="2020-11-13 00:00:00+00:00"
+
+CMD ["/bin/bash"]
+```
+
+
+# docker 网路、
+1.  --link 
+    *  ip addr 查看地址
+    * evth-pair https://blog.csdn.net/alisa_0639/article/details/119248948
+    * --link 可以解决网络联通问题，只能单向，不可以反向。就是在hosts配置新增个ip
+2. 自定义网络
+    1. 自定义网络
+        * docker network create --driver bridge --subnet 192.168.0.0/16 --gateway 192.168.0.1 mynet 
+        * docker network ls
+        * docker network inspect mynet
+        ---
+        解决 --link 单向问题
+    2. 网或联通 
+        * docker network connect mynet nginx
+        * docker network connet mynet
 
 
 
-
-
-
-
-6144605005a2
-
-919b69690fee
-
-71ee32519e38
