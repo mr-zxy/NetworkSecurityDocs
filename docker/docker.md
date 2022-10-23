@@ -84,7 +84,8 @@ docker run -it -v 主机目录:容器内目录
     ---
     可以通过一个具名挂载找到我们想要的一个卷，大多数使用“具名”。
 
-# docker file
+# docker file 
+## 创建容器卷的一种方法
 1. 创建dockerfile 文件
     ``` dockerfile
     FROM centos
@@ -95,9 +96,26 @@ docker run -it -v 主机目录:容器内目录
     ```
 2. docker build -f /docker_test/dockerfile -t xuyang/centos:1.0 .
 !["log"](./images/3361666494599_.pic.jpg)
-3. docker run -it 4fd4107796f5 /bin/bash 启动镜像 
+3. docker run -it -d CONTAINERID /bin/bash 启动镜像 
+4. docker inspect CONTAINERID 查看卷挂载路径 
+!["log"](./images/3371666495325_.pic.jpg)
+
+# 数据卷容器 
+ ## desc 两个或多个之间实现数据共享
+ ### 启动2个容器
+ * docker run -it -name docker01 xuyang/centos:1.0 
+ * docker run -it --name docker02 --volumes-from docker01 xuyang/centos:1.0 
+ ---
+ docker01更改同时也更改了docker02
+
+
+
+
 
 
 
 6144605005a2
+
 919b69690fee
+
+71ee32519e38
