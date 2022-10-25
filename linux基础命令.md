@@ -1,4 +1,5 @@
 # linux 基础命令
+# java java -jar ./docker-0.0.1-SNAPSHOT.jar >> ./register.log 2>&1 &
 ### ls
 ```shell
 ‘d’：目录文件；
