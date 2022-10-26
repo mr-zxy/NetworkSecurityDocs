@@ -1,13 +1,13 @@
 # docke-compose 配置redis
 ## 创建 volumes 目录
 ```
-mkdir -p /dockerServer/redis/data /dockerServer/redis/logs /dockerServer/redis/conf
-chmod -R 777 /dockerServer/redis/data*
-chmod -R 777 /dockerServer/redis/logs*
+mkdir -p /home/redis/data /home/redis/logs /home/redis/conf
+chmod -R 777 /home/redis/data*
+chmod -R 777 /home/redis/logs*
 ```
 ## redis.conf配置文件
 ```
-cd /dockerServer/redis/conf
+cd /home/redis/conf
 redis.conf
 * 复制 ./redis.conf 写进去
 * requirepass 你的密码
@@ -30,9 +30,9 @@ redis.conf
     environment:
       TZ: Asia/Shanghai
     volumes:
-      - /dockerServer/redis/data:/data
-      - /dockerServer/redis/conf/redis.conf:/etc/redis/redis.conf
-      - /dockerServer/redis/logs:/logs
+      - /home/redis/data:/data
+      - /home/redis/conf/redis.conf:/etc/redis/redis.conf
+      - /home/redis/logs:/logs
     command: ["redis-server","/etc/redis/redis.conf"]
 ```
 

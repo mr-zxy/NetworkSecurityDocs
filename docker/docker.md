@@ -81,7 +81,7 @@ docker run -it -v 主机目录:容器内目录
     * docker run -d -p --name nginx01 -v /etc/nginx nginx 匿名
     * docker run -d -p --name nginx02 -v xuyang-nginx:/etc/nginx nginx 具名  
     * docker volume ls 查看所有卷的情况
-    * docker vloume inspect xuyang-nginx 查看指定卷内部信息
+    * docker volume inspect xuyang-nginx 查看指定卷内部信息
     ---
     可以通过一个具名挂载找到我们想要的一个卷，大多数使用“具名”。
 

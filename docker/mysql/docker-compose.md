@@ -1,8 +1,9 @@
+# docke-compose 配置mysql
 ## 创建 volumes 目录
 ```
-mkdir -p /dockerServer/mysql/conf /dockerServer/mysql/logs /dockerServer/mysql/data
-chmod -R 777 /dockerServer/mysql/data*
-chmod -R 777 /dockerServer/mysql/logs*
+mkdir -p /home/mysql/conf /home/mysql/logs /home/mysql/data
+chmod -R 777 /home/mysql/data*
+chmod -R 777 /home/mysql/logs*
 ```
 # 进入 mysql 客户端
 ```
@@ -20,9 +21,9 @@ mysql:
     ports:
       - "3306:3306"
     volumes:
-      - /dockerServer/mysql/conf:/etc/mysql/conf.d
-      - /dockerServer/mysql/logs:/logs
-      - /dockerServer/mysql/data:/var/lib/mysql
+      - /home/mysql/conf:/etc/mysql/conf.d
+      - /home/mysql/logs:/logs
+      - /home/mysql/data:/var/lib/mysql
     command: [
           'mysqld',
           '--innodb-buffer-pool-size=80M',
@@ -34,5 +35,3 @@ mysql:
     environment:
       MYSQL_ROOT_PASSWORD: root
 ```
-
-

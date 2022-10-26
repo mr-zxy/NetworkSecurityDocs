@@ -4,6 +4,8 @@
 2. 编写
     ./Dockerfile
 3. 生成镜像 
-    * docker build -t demo:1.0 .
-4. 运行镜像
-    * docker run --name demo --restart=always -d -p 8080:8080 demo:1.0
+    * docker build -t framework:1.0 .
+* 运行镜像
+    * docker run --name frameworkJ --restart=always -d -p 8080:8080 framework:1.0
+* docker-compose 运行
+    * docker-compose up
