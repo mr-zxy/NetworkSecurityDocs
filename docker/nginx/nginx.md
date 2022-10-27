@@ -5,6 +5,7 @@
     mkdir -p /home/nginx/www
     mkdir -p /home/nginx/logs
     mkdir -p /home/nginx/conf
+    mkdir -p /home/nginx/ssl
     ```
 4. docker cp e897031a474f:/etc/nginx/nginx.conf /home/nginx/conf
   * 这句话复制出来可能会是文件夹，需要手动创建文件  /home/nginx/conf/nginx.conf
@@ -46,6 +47,7 @@ http {
     mkdir -p /home/nginx/www
     mkdir -p /home/nginx/logs
     mkdir -p /home/nginx/conf
+    mkdir -p /home/nginx/ssl
     ```
  ``` dockerfile
  nginx:
@@ -61,4 +63,11 @@ http {
       - /home/nginx/www:/usr/share/nginx/html
       - /home/nginx/conf/nginx.conf:/etc/nginx/nginx.conf
       - /home/nginx/logs:/var/log/nginx
+ ```
+
+ # 配置https 
+ * 注意路径
+ ```
+  ssl_certificate      /cert/cert.pem;
+  ssl_certificate_key  /cert/cert.key;
  ```

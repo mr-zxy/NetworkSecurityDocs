@@ -56,3 +56,4 @@ services:
       - /home/nginx/www:/usr/share/nginx/html
       - /home/nginx/conf/nginx.conf:/etc/nginx/nginx.conf
       - /home/nginx/logs:/var/log/nginx
+      - /home/nginx/ssl:/cert
