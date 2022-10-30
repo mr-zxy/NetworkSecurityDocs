@@ -1,4 +1,4 @@
-* fping -g 192.168.1.6/24
+* fping -g -q 192.168.1.6/24
 * 先输入命令更新一下系统：
 * apt-get update，接着输入命令下载安装arpspoof程序：
 * apt-get install dsniff；然后查看是否下载成功输入命

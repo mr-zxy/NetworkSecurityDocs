@@ -1,0 +1,1 @@
+/opt/homebrew/Cellar/python@3.9/3.9.12/bin
