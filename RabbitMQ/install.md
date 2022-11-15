@@ -1,4 +1,5 @@
 ## rabbitmq 安装
+> mq 基于amqp 协议
 1. RabbitMQ是采用Erlang语言开发的，所以系统环境必须提供Erlang环境。
     ``` shell
     brew install rabbitmq

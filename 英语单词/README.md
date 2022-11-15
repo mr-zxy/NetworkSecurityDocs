@@ -5,3 +5,4 @@
 |Producer|生产者|
 |queue|队列|
 |channel|频道;渠道;|
+|Switch|交换机|
