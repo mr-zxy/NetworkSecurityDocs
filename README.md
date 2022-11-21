@@ -8,6 +8,6 @@
 
 [阿里云 Docker镜像加速](https://cr.console.aliyun.com/cn-hangzhou/instances/mirrors/)
 
-[节点分享(clash yaml)]()
+[节点分享(clash yaml)](https://github.com/mr-zxy/NetworkSecurityDocs/blob/main/proxies.yaml)
 
 [在线节点池](https://sspool.herokuapp.com/clash/proxies)
