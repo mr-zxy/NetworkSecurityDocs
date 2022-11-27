@@ -14,3 +14,11 @@
     * cd /tmp
     * https://blog.csdn.net/qq_46919160/article/details/122069804
 6. sudo shutdown -h now 关机 or halt
+7. 静态ip设置
+
+```
+iface eth0 inet static
+address 192.168.1.29
+netmask 255.255.255.0
+gateway 192.168.1.1
+```
