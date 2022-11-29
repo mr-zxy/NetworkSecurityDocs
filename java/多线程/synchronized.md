@@ -5,11 +5,20 @@ public class MyThread6_1 implements Runnable {
 
     private int count = 5;
 
+    // 锁方法体
     private synchronized void run1(){
         count--;
         System.out.println("由 " + Thread.currentThread().getName() +
                 " 计算, count=" + count);
     }
+    // 锁代码块
+    // private void run1(){
+    //     synchronized(this){
+    //         count--;
+    //         System.out.println("由 " + Thread.currentThread().getName() +
+    //                 " 计算, count=" + count);
+    //     }
+    // }
     @Override
     public void run() {
         run1();
