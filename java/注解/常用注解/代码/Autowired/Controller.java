@@ -1,4 +1,5 @@
 @RestController
+@RequestMapping("/books")
 public class BookController {
     // 定义属性
     @Autowired
@@ -9,4 +10,9 @@ public class BookController {
         System.out.println(componentDemo.getName());
         return null;
     };
+    @GetMapping("/{id}")
+    public String getById(@PathVariable Integer id) {
+        System.out.println(componentDemo.getName());
+        return "hello , spring boot!";
+    }
 }
