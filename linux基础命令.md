@@ -79,3 +79,6 @@ java java -jar ./docker-0.0.1-SNAPSHOT.jar >> ./register.log 2>&1 &
         * P：表示一个点到点的连接。
 　　    ** 正常情况下，RX-ERR/TX-ERR、RX-DRP/TX-DRP和RX-OVR/TX-OVR的值都应该为0，如果这几个选项的值不为0，并且很大，那么网络质量肯定有问题，网络传输性能也一定会下降
 ```
+###  lsof -i tcp:8080  查看端口进程
+### kill PID 杀死进程
+
