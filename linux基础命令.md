@@ -82,3 +82,6 @@ java java -jar ./docker-0.0.1-SNAPSHOT.jar >> ./register.log 2>&1 &
 ###  lsof -i tcp:8080  查看端口进程
 ### kill PID 杀死进程
 
+
+
+
