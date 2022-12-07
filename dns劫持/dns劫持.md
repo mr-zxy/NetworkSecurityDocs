@@ -27,3 +27,5 @@ ettercap -i eth0 -Tq -M arp:remote -P dns_spoof /被攻击者ip// /被攻击者�
 * 查看日志 tail -f d.txt | grep "dns_spoof"
 ## 劫持成功
 !["dns"](./dns1.jpg)
+123.34.54：8888:/asdasd/sadhkk
+www.xxx.com

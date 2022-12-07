@@ -1,0 +1,11 @@
+spring:
+  rabbitmq:
+    host: 127.0.0.1
+    password: admin
+    username: admin
+    publisher-confirm-type: correlated
+    listener:
+      type: simple
+      simple:
+        default-requeue-rejected: false
+        acknowledge-mode: manual
