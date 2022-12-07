@@ -11,7 +11,7 @@
 * 标题(headers) [headers代码](https://github.com/mr-zxy/NetworkSecurityDocs/tree/main/RabbitMQ/code/mqJava/headers)
 * 消息模型(work) [work代码](https://github.com/mr-zxy/NetworkSecurityDocs/tree/main/RabbitMQ/code/mqJava/work)
 * ttl [消息队列过期时间设置](https://github.com/mr-zxy/NetworkSecurityDocs/tree/main/RabbitMQ/code/mqJava/ttl)
-* 死性队列 [死性队列-详见Spring-boot 整合](https://github.com/mr-zxy/NetworkSecurityDocs/blob/main/RabbitMQ/code/springBoot/DirectRabbitConfig.java)
+* 死性队列 [死性队列-往下看](https://github.com/mr-zxy/NetworkSecurityDocs/blob/main/RabbitMQ/code/springBoot/DirectRabbitConfig.java)
 
 1. fanout 广播模式 只要有一个订阅都会收到消息 
 2. direct 路由模式 根据路由key进行匹配 
