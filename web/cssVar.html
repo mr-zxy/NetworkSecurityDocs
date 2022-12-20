@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Css Var</title>
+    <style>
+        :root {
+            --button-text-color: white;
+            --button-border: black;
+            --button-background: black;
+            --button-scale: 4;
+            --button-rotate: 0deg;
+        }
+
+        body{
+            background-color: darkblue;
+        }
+
+        button {
+            color: var(--button-text-color);
+            border: var(--button-border);
+            background-color: var(--button-background);
+            cursor: pointer;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            transform: scale(var(--button-scale)) rotate(var(--button-rotate));
+        }
+    </style>
+</head>
+
+<body>
+    <button id="btn">Play</button>
+    <script>
+
+        class Utils {
+            static color16() {
+                const r = Math.floor(Math.random() * 256);
+                const g = Math.floor(Math.random() * 256);
+                const b = Math.floor(Math.random() * 256);
+                const color = `#${r.toString(16)}${g.toString(16)}${b.toString(16)}`;
+                return color;
+            }
+            static getRandom(min, max) { 
+                return Math.floor(Math.random() * (max + 1 - min) + min)
+            }
+        }
+
+        btn.onclick = function () {
+            const timer=[];
+            const root = document.querySelector("body");
+            const styles = getComputedStyle(root);
+
+            const getPropertyValue = (val) => styles.getPropertyValue(val)
+            const setPropertyValue = (key, val) => root.style.setProperty(key, val)
+            timer[timer.length]=setInterval(() => {
+                setPropertyValue("--button-text-color", Utils.color16())
+                setPropertyValue("--button-border", Utils.color16())
+                setPropertyValue("--button-background", Utils.color16())
+                setPropertyValue("--button-scale",Utils.getRandom(4,30))
+                // setPropertyValue("--button-rotate",Utils.getRandom(0,360)+"deg")
+                clearInterval(timer[timer.length])
+            }, 10)
+
+        }
+
+    </script>
+</body>
+
+</html>

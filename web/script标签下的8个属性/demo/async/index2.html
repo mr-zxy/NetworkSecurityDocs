@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<div class="Div">div</div>
+<div id="app">
+    <button @click="aaa">xxx</button>
+</div>
+<body>
+<!-- <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.0/jquery.min.js" crossorigin="anonymous"></script>  -->
+<script src="https://cdn.bootcdn.net/ajax/libs/vue/2.6.12/vue.common.dev.js"  crossorigin="anonymous"></script>
+    <!-- <script src="http://localhost:3000/d2.js" crossorigin="anonymous"></script> -->
+    <script>
+        window.onerror = function (message, url, line, column, error) {
+            console.log(message, url, line, column, error,'error');
+        }; // call function declared in app.js
+        const vm=new Vue({
+            el:"#app",
+            data:{
+                arr:[]
+            },
+            methods:{
+                aaa(){
+console.log(this.$set(arr,2,2))
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>
+<!-- note: crossorigin="anonymous" intentionally absent -->
+<!-- <script src="http://another-domain.com/app.js"></script> -->

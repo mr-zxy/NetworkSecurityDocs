@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>async 异步加载</title>
+</head>
+
+<body>
+
+</body>
+
+</html>
+<!-- <script src="./d1.js" async></script>
+<script>
+    console.log(text)
+</script> -->
+
+<!-- <script src="./d1.js"></script> -->
+<script >
+    // console.log(text)
+    // window.onerror = function (message, source, lineno, colno, error) {
+    //     console.log(message, source, lineno, colno, error)
+    //     console.log(source)
+    //     console.log(lineno)
+    //     console.log(colno)
+    //     console.log(error)
+    //     //   errorMonitor(message, source, lineno, colno, error);
+    //     return true
+    // }
+    window.addEventListener('error', function(msg, url, lineno, colno, error) {
+    console.log('error catch:', msg.message,'---==--');
+    return true
+})
+
+</script>
+<!-- <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.0/jquery.min.js" crossorigin="use-credentials"></script>  -->
+<!-- <script src="https://example.com/example-framework.js" crossorigin></script> -->
+<!-- <script src="https://example.com/example-framework.js" ></script> -->
+<script src="http://localhost:3000/d2.js" crossorigin="use-credentials"></script>
+
+<!-- <script crossorigin="use-credentials">
+    console.log(d2)
+</script> -->
+
+
+<!-- https://juejin.cn/post/6969825311361859598 -->
+<!-- https://www.cnblogs.com/sugar-tomato/p/9023544.html -->

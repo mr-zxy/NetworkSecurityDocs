@@ -1,0 +1,1 @@
+const text="Hello, you!欢迎";  
