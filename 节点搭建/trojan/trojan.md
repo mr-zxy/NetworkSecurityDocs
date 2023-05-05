@@ -27,3 +27,6 @@
 acme.sh --register-account -m 1989429861@qq.com
 acme.sh  --issue -d leisurely.cc  --standalone -k ec-256
 acme.sh --installcert -d leisurely.cc --ecc  --key-file   /trojan/server.key   --fullchain-file /trojan/server.crt 
+
+acme.sh  --issue -d shoppping.top  --standalone -k ec-256
+acme.sh --installcert -d shoppping.top --ecc  --key-file   /cer/server.key   --fullchain-file /cer/server.crt 

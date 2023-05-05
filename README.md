@@ -10,3 +10,5 @@
 [节点分享(clash yaml)](https://github.com/mr-zxy/NetworkSecurityDocs/blob/main/proxies.yaml)
 
 [在线节点池](https://sspool.herokuapp.com/clash/proxies)
+[pdf 书籍下载](https://awesome-programming-books.github.io/)
+
