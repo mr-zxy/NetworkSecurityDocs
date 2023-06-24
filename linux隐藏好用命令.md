@@ -10,3 +10,4 @@
 * useradd 用户名 创建用户
 * passwd 密码 设置密码
 * cat /etc/passwd 查看所有用户
+* sudo install -c -o $USER xxx /usr/local/bin/ 将可执行文件添加到系统中在任何位置可使用

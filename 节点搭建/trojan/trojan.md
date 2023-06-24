@@ -18,7 +18,7 @@
     安装证书： acme.sh --installcert -d 你的域名 --ecc  --key-file   /root/trojan/server.key   --fullchain-file /root/trojan/server.crt 
  
     如果默认CA无法颁发，则可以切换下列CA：
-    切换 Let’s Encrypt：acme.sh --set-default-ca --server letsencrypt
+    切换 Let’s Encrypt：acme.sh --set-default-ca --server letsrm encrypt
     切换 Buypass：acme.sh --set-default-ca --server buypass
     切换 ZeroSSL：acme.sh --set-default-ca --server zerossl
 ```
@@ -30,3 +30,11 @@ acme.sh --installcert -d leisurely.cc --ecc  --key-file   /trojan/server.key   -
 
 acme.sh  --issue -d shoppping.top  --standalone -k ec-256
 acme.sh --installcert -d shoppping.top --ecc  --key-file   /cer/server.key   --fullchain-file /cer/server.crt 
+
+acme.sh --register-account -m zhigengya@proton.me
+acme.sh --issue -d zhigengya.com  --standalone -k ec-256
+acme.sh --installcert -d zhigengya.com --ecc  --key-file   /cer/server.key   --fullchain-file /cer/server.crt 
+
+acme.sh --register-account -m zhigengya@proton.me
+acme.sh --issue -d gqiyi.com  --standalone -k ec-256
+acme.sh --installcert -d gqiyi.com --ecc  --key-file  /cer/server.key   --fullchain-file /cer/server.crt
