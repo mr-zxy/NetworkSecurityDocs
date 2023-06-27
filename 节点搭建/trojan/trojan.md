@@ -18,9 +18,17 @@
     安装证书： acme.sh --installcert -d 你的域名 --ecc  --key-file   /root/trojan/server.key   --fullchain-file /root/trojan/server.crt 
  
     如果默认CA无法颁发，则可以切换下列CA：
-    切换 Let’s Encrypt：acme.sh --set-default-ca --server letsrm encrypt
-    切换 Buypass：acme.sh --set-default-ca --server buypass
-    切换 ZeroSSL：acme.sh --set-default-ca --server zerossl
+    切换 Let's Encrypt
+    acme.sh --set-default-ca --server letsencrypt
+    切换 Buypass
+    acme.sh --set-default-ca --server buypass
+    切换 ZeroSSL
+    acme.sh --set-default-ca --server zerossl
+    切换 SSL.com
+    acme.sh --set-default-ca --server ssl.com
+    切换 Google Public CA
+    acme.sh --set-default-ca --server google
+
 ```
 
 // 本地替换
@@ -38,3 +46,36 @@ acme.sh --installcert -d zhigengya.com --ecc  --key-file   /cer/server.key   --f
 acme.sh --register-account -m zhigengya@proton.me
 acme.sh --issue -d gqiyi.com  --standalone -k ec-256
 acme.sh --installcert -d gqiyi.com --ecc  --key-file  /cer/server.key   --fullchain-file /cer/server.crt
+
+
+acme.sh --issue -d wcdha.com  --standalone -k ec-256
+acme.sh --installcert -d wcdha.com --ecc  --key-file  /cer/server.key   --fullchain-file /cer/server.crt
+
+
+mysql
+阿里云证书申请
+下载
+curl https://get.acme.sh | sh
+安装 socat：apt install socat
+alias acme.sh=~/.acme.sh/acme.sh
+开放80端口 
+
+centos firewall-cmd --zone=public --add-port=80/tcp --permanent
+重启动防火墙 firewall-cmd --reload
+ubantu 开放80端口：ufw allow 80
+重启动防火墙 sudo ufw reload
+
+acme.sh --register-account -m 1989429861@qq.com
+
+acme.sh --issue -d wcdha.com  --standalone -k ec-256 
+
+export Ali_Key=""
+export Ali_Secret=""
+acme.sh --issue -d wcdha.com --dns dns_ali --standalone -k ec-256
+
+acme.sh --installcert -d wcdha.com --ecc  --key-file  /cer/server.key   --fullchain-file /cer/server.crt
+
+更新证书
+acme.sh --renew -d wcdha.com --dns dns_ali --standalone -k ec-256 --force
+自动更新
+手写 shell
